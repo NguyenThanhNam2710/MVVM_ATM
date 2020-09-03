@@ -9,6 +9,7 @@
 
     <Button
         android:id="@+id/btnchuyen"
+        android:text="Chuyen man hinh nhap atm"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="chuyenManhinh" />
