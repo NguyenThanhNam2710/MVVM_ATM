@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">MVVM_ATM</string>
+    <string name="btn_Send">Kiểm tra</string>
+</resources>
