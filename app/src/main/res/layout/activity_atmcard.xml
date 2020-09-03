@@ -6,10 +6,6 @@
     <data>
 
         <variable
-            name="appData"
-            type="com.example.mvvm_atm.models.ATM" />
-
-        <variable
             name="viewModel"
             type="com.example.mvvm_atm.viewmodels.ATMCardViewModel" />
     </data>
@@ -29,7 +25,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="16dp"
                 android:layout_marginTop="8dp"
-                android:text="@{appData.tv_title}"
+                android:text="@{viewModel.title}"
                 android:textColor="#000"
                 android:textSize="18sp"
                 android:textStyle="bold" />
@@ -51,19 +47,35 @@
                     app:cardCornerRadius="8dp"
                     app:cardElevation="2dp">
 
-                    <EditText
-                        android:id="@+id/edtText"
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:background="@android:color/transparent"
-                        android:drawableRight="@drawable/addressbook"
-                        android:drawablePadding="8dp"
-                        android:drawableTint="#0984e3"
-                        android:hint="@{appData.edt_hint_import}"
-                        android:afterTextChanged="@{(editable)->viewModel.afterTextChanged(editable)}"
-                        android:inputType="textMultiLine"
-                        android:paddingLeft="16dp"
-                        android:paddingRight="8dp" />
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/edtText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:afterTextChanged="@{(editable)->viewModel.afterTextChanged(editable)}"
+                            android:background="@android:color/transparent"
+                            android:hint="@{viewModel.edtHintImport}"
+                            android:inputType="textMultiLine"
+                            android:paddingLeft="16dp"
+                            android:paddingRight="8dp" />
+
+                        <ImageView
+
+                            android:id="@+id/imgIcon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginRight="8dp"
+                            android:src="@drawable/addressbook"
+
+                            app:tint="#0984e3" />
+                    </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
@@ -79,10 +91,10 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:background="#0984e3"
+                        android:enabled="@{viewModel.afterTextChanged}"
                         android:text="@string/btn_Send"
                         android:textAllCaps="false"
                         android:textColor="#fff"
-                        android:enabled="@{viewModel.afterTextChanged}"
                         android:textSize="18sp" />
                 </androidx.cardview.widget.CardView>
             </LinearLayout>

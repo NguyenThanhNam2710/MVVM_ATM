@@ -32,8 +32,6 @@ public class ATMCardActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         ActivityAtmcardBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_atmcard);
         init();
-        ATM appData = new ATM("NHẬP SỐ THẺ ATM", "Số thẻ ATM người nhận");
-        binding.setAppData(appData);
         binding.setViewModel(new ATMCardViewModel());
         binding.executePendingBindings();
         btnSend.setOnClickListener(new View.OnClickListener() {
