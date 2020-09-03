@@ -73,7 +73,7 @@
                             android:layout_marginLeft="8dp"
                             android:layout_marginRight="8dp"
                             android:src="@drawable/addressbook"
-                            android:visibility="@{viewModel.visibility ? View.INVISIBLE : View.VISIBLE}"
+                            android:visibility="@{viewModel.visibility ? View.VISIBLE : View.INVISIBLE}"
                             app:tint="#0984e3" />
                     </LinearLayout>
 

@@ -18,7 +18,7 @@ public class ATMCardViewModel extends BaseObservable {
     @Bindable
     private boolean afterTextChanged = false;
     @Bindable
-    private boolean visibility = true;
+    private boolean visibility = false;
 
     public CharSequence getEdtHintImport() {
         return appData.getEdt_hint_import();
@@ -50,10 +50,10 @@ public class ATMCardViewModel extends BaseObservable {
     public void afterTextChanged(CharSequence s) {
         if (s.length() == 0) {
             setAfterTextChanged(false);
-            setVisibility(true);
+            setVisibility(false);
         } else {
             setAfterTextChanged(true);
-            setVisibility(false);
+            setVisibility(true);
         }
     }
 
