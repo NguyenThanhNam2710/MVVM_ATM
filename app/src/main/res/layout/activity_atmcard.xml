@@ -5,6 +5,8 @@
 
     <data>
 
+        <import type="android.view.View" />
+
         <variable
             name="viewModel"
             type="com.example.mvvm_atm.viewmodels.ATMCardViewModel" />
@@ -65,14 +67,13 @@
                             android:paddingRight="8dp" />
 
                         <ImageView
-
                             android:id="@+id/imgIcon"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:layout_marginLeft="8dp"
                             android:layout_marginRight="8dp"
                             android:src="@drawable/addressbook"
-
+                            android:visibility="@{viewModel.visibility ? View.INVISIBLE : View.VISIBLE}"
                             app:tint="#0984e3" />
                     </LinearLayout>
 
