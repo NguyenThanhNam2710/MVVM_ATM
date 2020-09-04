@@ -1,5 +1,6 @@
 package com.example.mvvm_atm.views;
 
+import android.app.Activity;
 import android.content.Context;
 import android.text.TextUtils;
 import android.util.AttributeSet;
@@ -10,18 +11,24 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.databinding.BindingAdapter;
+import androidx.databinding.DataBindingUtil;
 
 import com.example.mvvm_atm.R;
+import com.example.mvvm_atm.databinding.ActivityAtmcardBinding;
+import com.example.mvvm_atm.viewmodels.ATMCardViewModel;
 
 public class CustomView extends RelativeLayout {
 
     LayoutInflater mInflater;
+    DataBindingUtil binding;
 
     public CustomView(Context context) {
         super(context);
         mInflater = LayoutInflater.from(context);
         init();
         mInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        binding.setContentView((Activity) context.getApplicationContext(), R.layout.activity_atmcard);
+
     }
 
     public CustomView(Context context, AttributeSet attrs, int defStyle) {
@@ -36,16 +43,8 @@ public class CustomView extends RelativeLayout {
         init();
     }
 
-    View view;
-
     public void init() {
-        view = mInflater.inflate(R.layout.custom_view, this, true);
+        View v = mInflater.inflate(R.layout.activity_atmcard, this, true);
 
-    }
-
-    @BindingAdapter({"toastMessage"})
-    public static void runMe(View view, String message) {
-        if (message != null)
-            Toast.makeText(view.getContext(), message, Toast.LENGTH_SHORT).show();
     }
 }

@@ -26,12 +26,4 @@ public class ATMCardActivity extends AppCompatActivity {
         binding.setViewModel(new ATMCardViewModel());
         binding.executePendingBindings();
     }
-
-
-    @BindingAdapter({"toastMessage"})
-    public static void runMe(View view, String message) {
-        if (message != null)
-            Toast.makeText(view.getContext(), message, Toast.LENGTH_SHORT).show();
-    }
-
 }
