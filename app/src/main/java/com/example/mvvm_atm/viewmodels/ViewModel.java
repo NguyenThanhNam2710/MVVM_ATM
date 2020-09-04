@@ -1,7 +1,11 @@
 package com.example.mvvm_atm.viewmodels;
 
+import android.content.Intent;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Toast;
 
 import androidx.databinding.BaseObservable;
@@ -9,6 +13,9 @@ import androidx.databinding.Bindable;
 import androidx.databinding.BindingAdapter;
 
 import com.example.mvvm_atm.BR;
+
+import java.util.ArrayList;
+import java.util.Locale;
 
 public class ViewModel extends BaseObservable {
 
@@ -88,5 +95,34 @@ public class ViewModel extends BaseObservable {
     public static void runMe(View view, String message) {
         if (message != null)
             Toast.makeText(view.getContext(), message, Toast.LENGTH_SHORT).show();
+    }
+
+    public void onSelectItem(AdapterView<?> parent, View view, int pos, long id) {
+        //pos                                 get selected item position
+        //view.getText()                      get lable of selected item
+        //parent.getAdapter().getItem(pos)    get item by pos
+        //parent.getAdapter().getCount()      get item count
+        //parent.getCount()                   get item count
+        //parent.getSelectedItem()            get selected item
+        //and other...
+
+        Log.e("onSelectItem", parent.getSelectedItem() + ", " +
+                parent.getCount() + ", " +
+                parent.getAdapter().getCount() + ", " +
+                parent.getAdapter().getItem(pos));
+
+        if (parent.getSelectedItem().toString() == "Viet Nam") {
+            setLocale(parent, "vi");
+        } else if (parent.getSelectedItem().toString() == "English") {
+            setLocale(parent, "en");
+        }
+    }
+
+    public void setLocale(AdapterView<?> parent, String lang) {
+        Locale mLocale = new Locale(lang);
+        Resources resources = parent.getResources();
+        Configuration configuration = resources.getConfiguration();
+        configuration.locale = mLocale;
+        resources.updateConfiguration(configuration, resources.getDisplayMetrics());
     }
 }

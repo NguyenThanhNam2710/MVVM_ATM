@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/img_country_flag"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/vn" />
+
+    <TextView
+        android:id="@+id/tv_country_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/img_country_flag"
+        android:layout_alignParentTop="true"
+        android:layout_margin="16dp"
+        android:layout_toEndOf="@id/img_country_flag"
+        android:layout_toRightOf="@id/img_country_flag"
+        android:gravity="center"
+        android:text="VietNam"
+        android:textColor="@android:color/black"
+        android:textSize="30sp" />
+
+</RelativeLayout>
