@@ -17,13 +17,10 @@ import com.example.mvvm_atm.models.ATM;
 import com.example.mvvm_atm.viewmodels.ATMCardViewModel;
 
 public class ATMCardActivity extends AppCompatActivity {
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ActivityAtmcardBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_atmcard);
         binding.setViewModel(new ATMCardViewModel());
-        binding.executePendingBindings();
     }
 }
