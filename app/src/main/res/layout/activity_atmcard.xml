@@ -7,11 +7,9 @@
 
         <import type="android.view.View" />
 
-        <import type="com.example.mvvm_atm.views.BindingUtils" />
-
         <variable
             name="viewModel"
-            type="com.example.mvvm_atm.viewmodels.ATMCardViewModel" />
+            type="com.example.mvvm_atm.viewmodels.ViewModel" />
     </data>
 
     <ScrollView
@@ -29,7 +27,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="16dp"
                 android:layout_marginTop="8dp"
-                android:text="@{viewModel.title}"
+                android:text="@string/tv_title"
                 android:textColor="#000"
                 android:textSize="18sp"
                 android:textStyle="bold" />
@@ -63,7 +61,7 @@
                             android:layout_weight="1"
                             android:afterTextChanged="@{(editable)->viewModel.afterTextChanged(editable)}"
                             android:background="@android:color/transparent"
-                            android:hint="@{viewModel.edtHintImport}"
+                            android:hint="@string/edt_hint_import"
                             android:inputType="textMultiLine"
                             android:paddingLeft="16dp"
                             android:paddingRight="8dp" />
@@ -103,28 +101,6 @@
                         bind:toastMessage="@{viewModel.toastMessage}" />
                 </androidx.cardview.widget.CardView>
             </LinearLayout>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:layout_marginLeft="8dp"
-                app:cardCornerRadius="8dp"
-                app:cardElevation="2dp">
-
-                <Button
-                    android:id="@+id/btnSends"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:background="#0984e3"
-                    android:onClick="@{()-> viewModel.onLoginClicked()}"
-                    android:text="@string/btn_Send"
-                    android:textAllCaps="false"
-                    android:textColor="#fff"
-                    android:textSize="18sp"
-                    android:visibility="invisible"
-                    bind:toastMessage="@{viewModel.toastMessage}" />
-            </androidx.cardview.widget.CardView>
         </LinearLayout>
     </ScrollView>
 </layout>

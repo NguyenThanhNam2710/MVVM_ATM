@@ -9,14 +9,11 @@ import androidx.databinding.Bindable;
 import androidx.databinding.BindingAdapter;
 
 import com.example.mvvm_atm.BR;
-import com.example.mvvm_atm.models.ATM;
 
-public class ATMCardViewModel extends BaseObservable {
-
-    ATM appData = new ATM("NHẬP SỐ THẺ ATM", "Số thẻ ATM người nhận");
+public class ViewModel extends BaseObservable {
 
 
-    public ATMCardViewModel() {
+    public ViewModel() {
     }
 
     @Bindable
@@ -25,15 +22,6 @@ public class ATMCardViewModel extends BaseObservable {
     private boolean visibility = false;
     @Bindable
     private String input = "";
-
-
-    public CharSequence getEdtHintImport() {
-        return appData.getEdt_hint_import();
-    }
-
-    public CharSequence getTitle() {
-        return appData.getTv_title();
-    }
 
     public boolean getAfterTextChanged() {
         return afterTextChanged;

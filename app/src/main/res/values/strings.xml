@@ -1,4 +1,6 @@
 <resources>
     <string name="app_name">MVVM_ATM</string>
     <string name="btn_Send">Kiểm tra</string>
+    <string name="edt_hint_import">nhập số thẻ ATM</string>
+    <string name="tv_title">Số thẻ ATM người nhận</string>
 </resources>
