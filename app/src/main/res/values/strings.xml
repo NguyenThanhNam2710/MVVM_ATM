@@ -3,4 +3,12 @@
     <string name="btn_Send">Kiểm tra</string>
     <string name="edt_hint_import">Nhập số thẻ ATM</string>
     <string name="tv_title">Số thẻ ATM người nhận</string>
+
+
+    <string name="app_text_Language">Ngôn ngữ</string>
+    <string name="app_text_vi">Tiếng Việt</string>
+    <string name="app_text_en">English</string>
+
+
+    <string name="errorMessage">Có gì đó không đúng</string>
 </resources>

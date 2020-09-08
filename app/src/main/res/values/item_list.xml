@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <array name="item_list">
-        <item>Viet Nam</item>
-        <item>English</item>
+        <item>@string/app_text_Language</item>
+        <item>@string/app_text_vi</item>
+        <item>@string/app_text_en</item>
     </array>
 </resources>

@@ -23,17 +23,19 @@
 
             <Spinner
                 android:id="@+id/spinner"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_margin="8dp"
                 android:entries="@array/item_list"
-                android:onItemSelected="@{(parent,view,pos,id)->viewModel.onSelectItem(parent,view,pos,id)}" />
+                android:onItemSelected="@{(parent,view,pos,id)->viewModel.onSelectItem(parent,view,pos,id)}"
+                bind:itemChange="@{viewModel.pos}" />
 
             <TextView
                 android:id="@+id/textView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="16dp"
-                android:layout_marginTop="8dp"
                 android:text="@string/tv_title"
                 android:textColor="#000"
                 android:textSize="18sp"
@@ -53,8 +55,7 @@
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:layout_weight="1"
-                    app:cardCornerRadius="8dp"
-                    app:cardElevation="2dp">
+                    app:cardCornerRadius="8dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -68,10 +69,13 @@
                             android:layout_weight="1"
                             android:afterTextChanged="@{(editable)->viewModel.afterTextChanged(editable)}"
                             android:background="@android:color/transparent"
+                            android:ellipsize="none"
                             android:hint="@string/edt_hint_import"
                             android:inputType="textMultiLine"
                             android:paddingLeft="16dp"
-                            android:paddingRight="8dp" />
+                            android:paddingRight="8dp"
+                            android:singleLine="true"
+                            android:textSize="13dp" />
 
                         <ImageView
                             android:id="@+id/imgIcon"
@@ -100,7 +104,7 @@
                         android:layout_height="match_parent"
                         android:background="@drawable/custom_btn"
                         android:enabled="@{viewModel.afterTextChanged}"
-                        android:onClick="@{()-> viewModel.onLoginClicked()}"
+                        android:onClick="@{()-> viewModel.onButtonClicked()}"
                         android:text="@string/btn_Send"
                         android:textAllCaps="false"
                         android:textColor="#fff"

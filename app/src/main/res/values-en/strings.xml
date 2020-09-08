@@ -3,5 +3,12 @@
     <string name="app_name">MVVM_ATM</string>
     <string name="btn_Send">Check</string>
     <string name="edt_hint_import">Enter the ATM card number</string>
-    <string name="tv_title">Receiver\'s ATM card number</string>
+    <string name="tv_title">Receiver ATM card number</string>
+
+    <string name="app_text_Language">Language</string>
+    <string name="app_text_vi">Tiếng Việt</string>
+    <string name="app_text_en">English</string>
+
+
+    <string name="errorMessage">Something wrong</string>
 </resources>
